@@ -7,11 +7,11 @@
 </head>
 <body class="conteudo exercicio">
 
-    <div id="primeiro">#primeiro</div>
+    <div id="primeiro" onclick="atlterna1()">#primeiro</div>
 
-    <div id='segundo'>Segundo</div>
+    <div id='segundo' onclick="atlterna2()">Segundo</div>
     
-    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <div id="terceiro" class="terceiro ultimo" onclick="atlterna3()">.terceiro .ultimo</div>
     
     <button id="bt_um" onclick="exemplo1()">Destacar</button>
  
@@ -38,6 +38,7 @@
     // lista_dois.forEach(e => e.classList.add('destaque') // todos tem que esta removido utilizando array.
     // lista_dois.forEach(e => e.classList.remove('destaque') // todos tem que esta removido utilizando array. 
 
+            
             function exemplo1(){
                 const lista_dois = [...document.getElementsByTagName('div')]
                 const bt = document.getElementById('bt_um')
@@ -56,6 +57,26 @@
 
                 
             }
+//
+//             function exemplo2(){
+//                 document.getElementById('primeiro').classList.toggle('destaque')
+
+
+//             }
+            const atlterna1 = () => document.getElementById('primeiro').classList.toggle('destaque') //faz marcar ou desmarcar ao clicar ou desmarcar
+            const atlterna2 = () => document.getElementById('segundo').classList.toggle('destaque')
+            const atlterna3 = () => document.getElementById('terceiro').classList.toggle('destaque')
+
+            // function exemplo3(){
+            //     document.getElementById('segundo').classList.toggle('destaque')
+
+
+            // }
+            // function exemplo4(){
+            //     document.getElementsByClassName('terceiro ultimo').classList.toggle('destaque')
+
+
+            // }
 
     </script>
 
