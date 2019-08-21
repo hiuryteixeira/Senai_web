@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+
+    <div id="primeiro">#primeiro</div>
+
+    <div id='segundo'>Segundo</div>
+    
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    
+    <button id="bt_um" onclick="exemplo1()">Destacar</button>
+ 
+    
+    
+    <script>              
+    // Exemplo recuperando selecionado elementos atraves do byUd e atribuindo  uma classe
+    // const pri = document.getElementById('segundo') //pri = id da da div segundo
+    // pri.classList.add('destaque')
+    //     document.getElementById('primeiro').classList.add('destaque')
+    //     //pri.innerHTML = "mudança" //pode addicioando pra mandar codigo html alem de texto.
+    //     pri.innerText = "outra mudança"
+    
+    // Metododo 1: de fazer percorrer a lista, utilizando for para percorrer array
+    // const divs = document.getElementsByTagName('div') 
+    // const lista = Array.from(document.getElementsByTagName('div')) // poderia passar divs ou document... convertendo para array quando retorna um vetor.
+    // const lista_dois = [...document.getElementsByTagName('div')] // tranformar html collection em array
+    //     // for(let i = 0; i<lista.length; i++){ // percorer o divs que tem lengh ou tamanho 3 
+    //     //     lista[i].classList.add('destaque') // funciona com lista[i] ou divs[i] percorendo a lista.
+    //     // } 
+        
+    //     //lista.forEach(e => e.classList.remove('destaque'))
+    //     //lista[2].classList.remove('destaque') // como atlterar de apenas de uma posição.
+    // lista_dois.forEach(e => e.classList.add('destaque') // todos tem que esta removido utilizando array.
+    // lista_dois.forEach(e => e.classList.remove('destaque') // todos tem que esta removido utilizando array. 
+
+            function exemplo1(){
+                const lista_dois = [...document.getElementsByTagName('div')]
+                const bt = document.getElementById('bt_um')
+                
+                if(bt.innerText == 'Destacar'){                            
+                 lista_dois.forEach(e => e.classList.add('destaque'))
+                 bt.innerText = "Remover Destaque"
+                            
+                } else {
+                    
+                    lista_dois.forEach(e => e.classList.remove('destaque'))
+                    bt.innerText = 'Destacar'
+
+                }
+
+
+                
+            }
+
+    </script>
+
+</body>
+</html>
