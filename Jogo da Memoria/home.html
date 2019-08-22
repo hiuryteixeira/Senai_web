@@ -8,71 +8,91 @@
 
     <style>
     
-		
-            table{
-                border: solid 1px;
-                width: 100%;
-                
+		  
 
-            }
-            table.linha{
-                height: 300px;
-            }
-            div{
-                border: solid 2px;
-                 
-            }
-            .linha{
-			display: -webkit-flex;
-			display: flex;
-		    }
-		    .coluna{
-			/*faz com que as colulas fiquem um unico tamanho
-			e elas são  atreladas a linha*/
-			-webkit-flex: 1;
-			-ms-flex: 1;
-			flex: 1;
-			/* padding: 10px; */
-			/* height: 300px; */
-			border: solid 1px;
-		}
- 
-    
-    
+       .linha{
+            display: -webkit-flex;
+            display: flex;
+        }
+        .coluna{
+            /*faz com que as colulas fiquem um unico tamanho
+            e elas são  atreladas a linha*/
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            padding: 10px;
+            height: 300px;
+            border: solid 1px;
+        }
         
-    
-    
-        </style>
+        .cor{
+            background-color: white;
+        }
+        .cor1{
+            background-color: blue;
+            
+        }
+        .cor2{
+            background-color: yellow;
+        }
+        .cor3{
+            background-color: yellowgreen;
+        }
+        .cor4{
+            background-color: turquoise;
+        }
+        .cor5{
+            background-color: black;
+        }
+        
+
+
+    </style>
 
 </head>
 
 
 <body>
- <table>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
 
-    </tr>
-    <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+<section class="linha">
+    <section class="coluna" onclick="atlterna1()" id="dv1"></section>
+    <section class="coluna" onclick="atlterna2()" id="dv2"></section>
+    <section class="coluna" onclick="atlterna3()" id="dv3"></section>
+    <section class="coluna" onclick="atlterna4()" id="dv4"></section>
+    <section class="coluna" onclick="atlterna5()" id="dv5"></section>
+</section>
+<section class="linha">
+    <section class="coluna" onclick="atlterna6()" id="dv6"></section>
+    <section class="coluna" onclick="atlterna7()" id="dv7"></section>
+    <section class="coluna" onclick="atlterna8()" id="dv8"></section>
+    <section class="coluna" onclick="atlterna9()" id="dv9"></section>
+    <section class="coluna" onclick="atlterna10()" id="dv10"></section>
+</section>
+<script>
     
-        </tr>
+    cores(){
+        const 
 
- </table>
-   
-  <!-- <section id="linha">
-        <div id="coluna"></div>
-        <div id="coluna"></div>
-        <div id="coluna"></div>
-        <div id="coluna"></div>
-    </section> -->
- 
+    }
 
+    if (getElementById('dv1') ===  ) {
+        
+    } else {
+        
+    }
+
+    const atlterna1 = () => document.getElementById('dv1').classList.toggle('cor1')
+    const atlterna2 = () => document.getElementById('dv2').classList.toggle('cor2')
+    const atlterna3 = () => document.getElementById('dv3').classList.toggle('cor3')
+    const atlterna4 = () => document.getElementById('dv4').classList.toggle('cor4')
+    const atlterna5 = () => document.getElementById('dv5').classList.toggle('cor5')
+    const atlterna6 = () => document.getElementById('dv6').classList.toggle('cor1')
+    const atlterna7 = () => document.getElementById('dv7').classList.toggle('cor3')
+    const atlterna8 = () => document.getElementById('dv8').classList.toggle('cor4')
+    const atlterna9 = () => document.getElementById('dv9').classList.toggle('cor5')
+    const atlterna10 = () => document.getElementById('dv10').classList.toggle('cor2')
+
+
+</script>
 </body>
 </html>

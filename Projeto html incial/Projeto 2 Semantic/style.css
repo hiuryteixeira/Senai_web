@@ -1,0 +1,114 @@
+*{
+	box-sizing: border-box;
+}
+html{
+	width: 100%;
+}
+body{ 
+	font-family: Arial;
+	padding: 10px;
+	background-color: #f1f1f1;
+	margin: 0px;
+
+}
+/*apenas no cabeçalho*/
+#cabecalho{
+	font-family: Garamond;
+	width: 100%; /*largura do elemento*/
+	padding: 40px;
+	text-align: center;
+	font-size: 35px;
+
+}
+#menu_superior{
+	width: 100%;
+	overflow: hidden;
+	background-color: #333;
+}
+
+#menu_superior a{
+	font-family: Calibri;
+	text-decoration: none;
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 10px 12px;
+	margin: 5px;
+
+
+}
+#menu_superior a:hover{
+	background-color: #ddd;
+	color: black;
+}
+#titulos{
+	text-align: center;
+
+}
+#titulos h1{
+	color: tomato;
+	font-family: Verdana;
+	font-size: 25px;
+	
+}
+#titulos p{
+	font-family: Times New Roman;
+	font-size: 16px;
+
+}
+#row:after {
+	border: solid 2px;
+	content: "";
+	display: table;
+	clear: both;	
+}
+.coluna{
+	float: left;
+	width: 50px;
+	padding: 10px;	
+	border: solid 2px;
+
+}
+.coldir{
+	width: 70%;
+
+}
+.colesq{
+	width: 30%;
+
+
+}
+
+main{
+	width: 100%;
+	/*border: solid 2px; aplicando borda ao cabeçalho*/
+}
+#rodape{
+	border: solid 2px;
+	text-align: center;
+	font-family: Corrier;
+	font-size: 16px;
+
+}
+
+#conteudo_secundario{
+	/*border: solid 2px; aplicando borda ao cabeçalho*/
+
+
+}
+#conteudo1{
+		width: 100%
+		/*border: solid 2px; aplicando borda ao cabeçalho*/
+}
+#conteudo2{
+		width: 100%
+		/*border: solid 2px; aplicando borda ao cabeçalho*/
+}
+#divulgacao{
+/*		width: 100%
+		border: solid 2px; /*aplicando borda ao cabeçalho*/
+}
+#menu_lateral{
+
+}
