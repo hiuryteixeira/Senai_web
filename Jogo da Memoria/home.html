@@ -29,7 +29,7 @@
             background-color: white;
         }
         .cor1{
-            background-color: blue;
+            background-color: blue;            
             
         }
         .cor2{
@@ -55,43 +55,49 @@
 <body>
 
 <section class="linha">
-    <section class="coluna" onclick="atlterna1()" id="dv1"></section>
-    <section class="coluna" onclick="atlterna2()" id="dv2"></section>
-    <section class="coluna" onclick="atlterna3()" id="dv3"></section>
-    <section class="coluna" onclick="atlterna4()" id="dv4"></section>
-    <section class="coluna" onclick="atlterna5()" id="dv5"></section>
+    <section class="coluna" onclick="declarar_cor('div1', 'cor1')" id="dv1"></section>
+    <section class="coluna" onclick="declarar_cor('div2', 'cor2')" id="dv2"></section>
+    <section class="coluna" onclick="declarar_cor('div3', 'cor3')" id="dv3"></section>
+    <section class="coluna" onclick="declarar_cor('div4', 'cor4')" id="dv4"></section>
+    <section class="coluna" onclick="declarar_cor('div5', 'cor5')" id="dv5"></section>
 </section>
 <section class="linha">
-    <section class="coluna" onclick="atlterna6()" id="dv6"></section>
-    <section class="coluna" onclick="atlterna7()" id="dv7"></section>
-    <section class="coluna" onclick="atlterna8()" id="dv8"></section>
-    <section class="coluna" onclick="atlterna9()" id="dv9"></section>
-    <section class="coluna" onclick="atlterna10()" id="dv10"></section>
+    <section class="coluna" onclick="declarar_cor('div6', 'cor3')" id="dv6"></section>
+    <section class="coluna" onclick="declarar_cor('div7', 'cor2')" id="dv7"></section>
+    <section class="coluna" onclick="declarar_cor('div8', 'cor4')" id="dv8"></section>
+    <section class="coluna" onclick="declarar_cor('div9', 'cor5')" id="dv9"></section>
+    <section class="coluna" onclick="declarar_cor('div10', 'cor1')" id="dv10"></section>
 </section>
 <script>
+   
+    function declarar_cor(id, classe){
+        document.getElementById(id).classList.add(classe)
+                
+    }
+    // const atlterna1 = () => document.getElementById('dv1').classList.toggle('cor1') // aplicando cor a sessão
+    // const atlterna2 = () => document.getElementById('dv2').classList.toggle('cor2')
+    // const atlterna3 = () => document.getElementById('dv3').classList.toggle('cor3')
+    // const atlterna4 = () => document.getElementById('dv4').classList.toggle('cor4')
+    // const atlterna5 = () => document.getElementById('dv5').classList.toggle('cor5')
+    // const atlterna6 = () => document.getElementById('dv6').classList.toggle('cor1')
+    // const atlterna7 = () => document.getElementById('dv7').classList.toggle('cor3')
+    // const atlterna8 = () => document.getElementById('dv8').classList.toggle('cor4')
+    // const atlterna9 = () => document.getElementById('dv9').classList.toggle('cor5')
+    // const atlterna10 = () => document.getElementById('dv10').classList.toggle('cor2')
+
     
-    cores(){
-        const 
 
-    }
 
-    if (getElementById('dv1') ===  ) {
+    
+
+        // if (document.getElementById('dv1').on) {
         
-    } else {
+    // }
+    // verrificar(){
+    //     document.getElementsByTagName(Selection.atlterna1(onclick(true)))
+    //     alert('clicou aqui')
         
-    }
-
-    const atlterna1 = () => document.getElementById('dv1').classList.toggle('cor1')
-    const atlterna2 = () => document.getElementById('dv2').classList.toggle('cor2')
-    const atlterna3 = () => document.getElementById('dv3').classList.toggle('cor3')
-    const atlterna4 = () => document.getElementById('dv4').classList.toggle('cor4')
-    const atlterna5 = () => document.getElementById('dv5').classList.toggle('cor5')
-    const atlterna6 = () => document.getElementById('dv6').classList.toggle('cor1')
-    const atlterna7 = () => document.getElementById('dv7').classList.toggle('cor3')
-    const atlterna8 = () => document.getElementById('dv8').classList.toggle('cor4')
-    const atlterna9 = () => document.getElementById('dv9').classList.toggle('cor5')
-    const atlterna10 = () => document.getElementById('dv10').classList.toggle('cor2')
-
+    // }
 
 </script>
 </body>
