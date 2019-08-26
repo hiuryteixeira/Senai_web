@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div class="ultimo">Segundo</div>
+    <div class="terceiro ultimo">
+        <span new-attrib>.terceiro .ultimo</span>
+</div>
+    
+    <script>              
+    // ... querrySector 
+    const selecionar = seletor => document.querySelectorAll
+    (seletor).forEach(e => e.classlist('destaque'))  
+
+    const deselecionar = seletor => document.querySelectorAll
+    (seletor).forEach(e => e.classlist('destaque')) 
+
+      //  selecionar('[new-attrib]')
+    //selecionar(':not(#primeiro)')
+    //selecionar('.terceiro.ultimo')
+    
+    // selecionar('div')
+    // deselecionar('div')
+    //selecionar('*') 
+    const lista = document.querySelectorAll('#primeiro')
+    for(let i=0; i<= lista.length; i ++){
+       lista[i].classList.add('destaque')
+       
+       // document.querySelectorAll('*')[i].classlist.add('destaque')
+
+    }
+    
+
+    </script>
+</body>
+</html>

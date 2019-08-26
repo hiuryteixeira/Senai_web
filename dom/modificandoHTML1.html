@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <script>
+        // ... criando e excluir elementos no html
+        const body = document.querySelector('body') // criando body
+        const div1 = document.createElement('div') // a constante div1 tem o codigo div html.
+
+        div1.classList.add('destaque')
+        div1.innerHTML = 'Primeiro'
+
+        body.appendChild(div1)
+
+        const div2 = document.createElement('div')
+        const div3 = document.createElement('div')
+        div2.setAttribute('novo-atributo', 'valor')
+        div2.innerHTML = "segundo"
+        body.appendChild(div2)
+
+        body.appendChild(div3)
+        const paragrafo = document.createElement('p')
+        paragrafo.innerHTML= 'Terceiro'
+        div3.appendChild(paragrafo)
+
+        const texto = document.createTextNode('antes...')
+        div3.insertBefore(texto, div3.childNodes[0])
+
+        const div4 = div3.cloneNode(true)
+        body.appendChild(div4)
+        body.removeChild(div1)
+        const divs = document.querySelectorAll('div') // pega a lista de div se não fizer não sabe qual div remover 
+            //div3.removeChild(paragrafo)
+
+        divs[0].removeChild(divs[0].childNodes[0]) // removendo elemntos da div na posição do array node na lista.
+        divs[2].removeChild(divs[2].childNodes[0]) 
+        
+        div3.removeChild(div3.childNodes[1])
+        //console.log(divs)
+
+    </script>
+</body>
+
+</html>
