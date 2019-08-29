@@ -8,6 +8,100 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         /* ... */
+        body{
+            font-family: Oswald, sans-serif;
+            background-color: lightgray;
+            
+        }
+       
+        .cabecalho{
+            position: relative;
+            background-color: #333;
+            border: solid 5px #4faddb;
+            height: 80px;
+            box-sizing: content-box;
+            
+        }
+        .cabecalho a{
+            
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+
+        }
+        .logo{
+            height: 80px;
+            /* display: inline-block; */
+            padding: 15px;
+
+
+        }
+        img{
+            height: 100%;
+        }
+        .menu-toggle{
+            /* position: relative; */
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 20px 15px;
+
+
+        }
+        .menu{
+            
+            position: relative;
+            height: 80px;
+            padding: 25px;
+        }
+        .menu a{
+            padding: 15px;
+
+        }
+        .menu a:hover{
+            background-color: #4faddb;
+            color: #000;
+            border-radius: 5px;
+        }
+        ul{
+            margin: 0px;
+            padding: 0px;            
+        }
+        li{
+            display: inline-block;
+        }
+        
+        
+        .botao{
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+        }
+        .botao destaque{
+            background-color: #f50a31;
+            color: #fff;
+            
+        }
+        
+        @media(max-width: 679px){
+            .menu-toggle{display: none}            
+            
+        }
+        @media(max-width: 680px){
+            .menu{display: none}            
+            
+        }
+        @media(min-width: 910px){
+            .autenticacao{display: none}
+
+        }
+
+
+        
+
     </style>
 </head>
 

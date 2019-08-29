@@ -5,7 +5,32 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        /* absolutas: px, cm, mm
+         viewport: vh, vmin, vmax
+         font: rem, em
+         */
+         body{
+             font-size: 64px;
+         }
+        .unidades-absolutas{
+            position: absolute;
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /*  pouco usado */
+            height: 20mm; /* pouco usado evitem */
+            top: 150px;
+            left: 200px;
+
+        }
+        .unidades-relativas{
+            position: relative;
+            font-size: 10vh;
+            padding: 5%;
+            border: solid 1vw #222222;
+            height: 15vh;
+        }
     </style>
 </head>
 
