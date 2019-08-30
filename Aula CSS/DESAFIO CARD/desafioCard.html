@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Card</title>
+    <style>
+           
+        /* ... */
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            
+            display: block;
+        }
+
+        .curso{
+            box-sizing: content-box;
+            display: inline-block;
+            padding: 10px;
+            margin: 25px;
+            border: solid 0.3px #ccc;
+            box-shadow: 8px 8px 8px 8px rgba(204, 204, 204, 0.5);
+            
+        }
+        .curso img{
+            height: 200px;
+            margin: 0px;
+            padding: 0px;
+        }
+        .curso-info{
+            /* position: relative; */
+            box-sizing: border-box;
+            
+        }
+        .curso-info h4{
+            
+            margin: 0px;
+            padding: 15px 2px 15px 2px;            
+            font-size: 1.5em;
+        }
+        .curso-info p{
+            
+            margin: 0px;
+            padding: 10px 2px 10px 2px;
+            font-size: 1em;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Card</h1>
+
+    <h2>Objetivo</h2>
+    <img src="objetivo.png" height="340" alt="Objetivo">
+
+    <h2>Resultado</h2>
+    <div>
+        <div class="curso">
+            <img src="http://sistemafieto.com.br/gestor/Repositorio/CRP.Sistema.PortalSistemaFIETO.SENAI.CursoSenai/636934446188656406.JPG" />
+            <div class="curso-info">
+                <h4>Técnico em Automação Industrial - Semipresencial</h4>
+                <p>Prof. Fulado Oliveira</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$3000,00</span>
+                <span class="preco-por">R$2850,00</span>
+            </div>
+        </div>
+        <div class="curso">
+            <img src="http://sistemafieto.com.br/gestor/Repositorio/CRP.Sistema.PortalSistemaFIETO.SENAI.CursoSenai/636790228116449283.png" />
+            <div class="curso-info">
+                <h4>Técnico em Edificações</h4>
+                <p>Prof. Sicrano Filho</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$3500,00</span>
+                <span class="preco-por">R$3250,00</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
