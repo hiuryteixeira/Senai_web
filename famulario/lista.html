@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LISTA Dinamica</title>
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Wallpoet&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body{
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 1fr;
+            grid-template-rows: 100px 1fr 50px;
+            grid-template-areas: 'cabecalho'
+                                    'conteudo'           
+                                    'rodapde';
+            grid-column-gap: 10px;
+            grid-row-gap: 5px;
+            
+
+
+        }
+        header{
+            grid-area: cabecalho;
+            border-bottom: solid 2px turquoise;
+            text-align: center;
+            font-family: 'Nanum Myeongjo', serif;
+            color: tomato;
+            }
+        div{
+            flex: 1;
+        }
+        main{
+            grid-area: conteudo;
+            display: flex;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            font-size: 1.1em;
+            padding: 20px;
+        }
+        label{
+            font-size: 1.5em;
+            padding: 15px 0px;
+        }
+        input{
+            padding: 10px;
+            font-size: 1.2em;
+            color: rgb(203, 231, 231);
+        }
+        .lista{
+            text-align: center;
+        }
+        .lista, .form{
+            border-right: solid 1px turquoise;
+            border-left: solid 1 px turquoise;
+            margin-bottom: 5px;
+
+        }
+        li{
+            display: inline-block;
+        }
+        a{
+            text-decoration: none;
+            font-family: 'Wallpoet', cursive;
+            color:aquamarine;
+            text-align: center;
+            background-color: rgba(99, 100, 96, 0.8);
+            padding: 10px;
+            margin: 10px 0px;
+            font-size: 1.5em;
+            box-shadow: 1px 2px rgba(146, 235, 238, 0.295);
+            
+        }
+        a:hover{
+            background-color: rgb(17, 172, 255);
+            box-shadow: rgba(99, 100, 96, 0.8);
+
+        }
+        a:active{
+            box-shadow: none;
+        }
+        footer{
+            grid-area: rodape;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        li{
+            flex: 1;
+            border: solid 1px turquoise;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lista Dinâmica</h1>
+    </header>
+    <main>
+        <div class="form">
+            <label>Nome: </label>
+            <input id='nome' type="text" placeholder="Digite o Nome">
+            <label>Idade: </label>
+            <input id='idade' type="number" placeholder="Digite a Idade">
+            <label>Telefone: </label>
+            <input id='telefone' type="number" placeholder="Digite o Telefone">
+            <a href="#" onclick="salvar()">SALVAR</a>
+        </div>
+        <div class="lista">
+            <ul>
+                <li>
+                    Lista
+                </li>
+            </ul>
+
+        </div>
+    </main>
+    <footer>
+        &#9400 Copyright - 2019
+    </footer>    
+</body>
+<script>
+    let cont = 0;
+    let edit = 0;
+    function salvar(){
+        if(edit != 0){
+            
+            const item = document.getElementsByTagName('li')[edit]
+            item.childNodes[1].innerHTML = document.querySelector('#nome').value
+            item.childNodes[3].innerHTML = document.querySelector('#idade').value
+            item.childNodes[5].innerHTML = document.querySelector('#telefone').value
+            edit = 0
+
+
+
+        }
+        else{
+            cont++
+            const lista = document.querySelector('ul')
+            const item = document.createElement('li')
+            const nome = document.createElement('span')
+            const idade = document.createElement('span')
+            const telefone = document.createElement('span')
+            const r_nome = document.createElement('span')
+            const r_idade = document.createElement('span')
+            const r_telefone = document.createElement('span')
+            r_nome.innerHTML =  'Nome: '
+            r_idade.innerHTML = ' | Idade: '
+            r_telefone.innerHTML = ' | Idade: '
+            nome.innerHTML = document.querySelector('#nome').value
+            idade.innerHTML = document.querySelector('#idade').value
+            telefone.innerHTML = document.querySelector('#telefone').value
+            item.appendChild(r_nome)
+            item.appendChild(nome)
+            item.appendChild(r_idade)
+            item.appendChild(idade)
+            item.appendChild(r_telefone)
+            item.appendChild(telefone)
+
+            // Criando botões 
+            const editar = document.createElement('a')
+            editar.innerHTML = 'Editar'
+            editar.setAttribute('href', '#')
+            editar.setAttribute('class', 'editar')
+            editar.setAttribute('onclick', `editar(${cont})`)
+
+            const excluir = document.createElement('a')
+            excluir.innerHTML = 'Excluir'
+            excluir.setAttribute('href', '#')
+            excluir.setAttribute('class', 'excluir')
+            excluir.setAttribute('onclick', `excluir(${cont})`)
+            
+            
+            item.appendChild(editar)
+            item.appendChild(excluir)
+            lista.appendChild(item)
+
+        }
+       
+        limpar()
+
+
+
+    }
+    function excluir(id){
+
+        let lista = document.querySelector('ul')
+        let item = document.getElementsByTagName('li')[id]
+        let nome = item.childNodes[1].innerHTML
+        if(confirm(`Desesja realmente excluir: ${nome} ? `)){
+            lista.removeChild(item)
+            cont--
+            atualizar_id()
+            edit = 0;
+            
+        }
+        limpar()
+
+    }
+    function limpar(){
+        const lista_input = Array.from(document.getElementsByTagName('input'))
+        lista_input.forEach( lista => lista.value = "")
+    }
+
+    function editar(id){
+        const lista = document.getElementsByTagName('li')[id]
+        const nome = document.querySelector('#nome')
+        const idade = document.querySelector('#idade')
+        const telefone = document.querySelector('#telefone')
+
+        nome.value = lista.childNodes[1].innerHTML
+        idade.value = lista.childNodes[3].innerHTML
+        telefone.value = lista.childNodes[5].innerHTML  
+        edit = id
+
+    }
+
+    function atualizar_id(){
+        var excluir = document.getElementsByClassName('excluir')
+        var editar = document.getElementsByClassName('editar')
+
+            for(let d=0; d< excluir.length; d++){
+                excluir[d].attributes[2].value = `excluir(${d+1})`
+                editar[d].attributes[2].value = `editar(${d+1})`
+
+
+            }
+
+
+    }
+
+
+
+
+</script>
+</html>

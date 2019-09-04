@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Document</title>
+    <style>
+       body{
+            display: grid;
+            border: solid 1px;
+            grid-template-columns: 50px 1fr 20px;
+            grid-template-rows: 20px 20px 1fr 20px;
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+        header{
+            border: solid 1px salmon;             
+            grid-column-end: span 4;
+        }
+        nav{
+            border: solid 1px burlywood;
+            grid-column-end: span 4;
+            text-align: center;
+            
+            vertical-align: center;
+        }
+         main {
+
+         }
+        
+        
+        footer{
+            border: solid 1px green;
+            grid-column-end: span 4;
+        }
+
+
+        
+
+
+    </style>
+</head>
+<body>
+        <header>Header</header>
+        <nav>Navigation Area</nav>
+        <main>
+                <section class="content1">Content Area</section>
+                <section class="content2">Image Text 1</section>
+                <section class="content3">Content Area 2</section>
+                <section class="content4">Image Text 2</section>
+                <section class="content5">Content Area 3</section>
+        </main>       
+        
+        <footer>Rodape</footer>
+        
+        
+
+
+</body>
+</html>
