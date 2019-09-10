@@ -14,6 +14,32 @@ app.use(bodyParse.json())
 
 app.get('/teste', (req, res) => res.send('Acessando...'))
 
+//app.listen(3000, () => console.log('Executando...'))
+
+const multer = require('multer')
+
+const storage = multer.diskStorage({    
+        destination: function (req, file, callback) {
+            callback(null, './upload')
+        }, 
+        filename: function (req, file, callback){
+            callback(null, `${Date.now()}_${file.originalname}`)
+        }
+    }
+)
+
+const upload = multer({storage}).single('arquivo')
+
+app.post('/upload', (req, res) => {
+    upload(req, res, err =>{
+        if(err){
+            return res.end('Ocoreu um erro no envio do arquivo...')
+        }
+        else{  
+        res.end('Concluido com Sucesso!')
+    }
+    }
+    ) 
+}
+)
 app.listen(3000, () => console.log('Executando...'))
-
-
