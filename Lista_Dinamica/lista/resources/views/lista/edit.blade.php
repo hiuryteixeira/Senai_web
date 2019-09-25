@@ -32,15 +32,18 @@
                 </div>
             @endif
         </div>
-        <form action="#" class="form"  method="POST">
+        <form action="{{ route('lista_dinamica.update', [$item -> id] ) }}" class="form"  method="POST">
+            
+            <input type="hidden" name="_method" value="PUT">
+
             {{ csrf_field() }}
             <label>NOME:</label>
-            <input id="nome" name="nome"type="text" placeholder="digite o nome">
+            <input id="nome" name="nome"type="text" value="{{ old('item', $item -> nome) }}">
             <label>IDADE:</label>
-            <input id="idade" name="idade" type="number" placeholder="digite a idade">
+            <input id="idade" name="idade" type="number" value="{{ old('item', $item -> idade) }}">
             <label>TELEFONE:</label>
-            <input id="telefone" name="telefone" type="number" placeholder="digite o telefone">
-            <button type="submit">Salvar</button>
+            <input id="telefone" name="telefone" type="number" value="{{ old('item', $item -> telefone) }}">
+            <button type="submit">Atualizar</button>
         </form>
         <div class="lista">
             <ul>
@@ -65,7 +68,5 @@
         </p>
     </footer>
 </body>
-<script>
-
-</script>
+<script></script>
 </html>

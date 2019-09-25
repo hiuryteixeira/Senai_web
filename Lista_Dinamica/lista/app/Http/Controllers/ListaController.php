@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lista;
+use App\Http\Requests\ListaRequest;
 
 class ListaController extends Controller
 {
@@ -34,9 +35,11 @@ class ListaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ListaRequest $request)
     {
-        //
+        Lista::create($request-> all());
+        $listas = Lista::all();
+        return view('lista/lista')->with(['listas' =>$listas]);
     }
 
     /**
@@ -58,7 +61,9 @@ class ListaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $listas = Lista::all();
+        $item = Lista::find($id);
+        return view('lista.edit')->with(['item'=>$item, 'listas' =>$listas]);
     }
 
     /**
@@ -68,9 +73,12 @@ class ListaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ListaRequest $request, $id)
     {
         //
+        $item = Lista::find($id)->update($request -> all());
+        return redirect()->route('lista_dinamica.index');
+
     }
 
     /**
@@ -81,6 +89,9 @@ class ListaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $item = Lista::find($id)->delete();
+        return redirect()->route('lista_dinamica.index');
+
     }
 }

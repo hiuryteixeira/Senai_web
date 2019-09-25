@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/lista_dinamica', 'ListaController');
+Route::get('lista_dinamica/{item}/delete', 'ListaController@destroy')->name('lista_dinamica.destroy');
